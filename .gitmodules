@@ -1,6 +1,9 @@
 [submodule "rf_msgs"]
 	path = rf_msgs
 	url = https://github.com/ucsdwcsng/rf_msgs.git
-[submodule "wiros_csi_node"]
+[submodule "wiros_csi"]
 	path = wiros_csi
 	url = https://github.com/ucsdwcsng/wiros_csi_node.git
+[submodule "wiros_processing"]
+	path = wiros_processing
+	url = https://github.com/Jklein64/wiros_processing.git
