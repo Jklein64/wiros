@@ -31,7 +31,7 @@ Then `cd` to the workspace root and build with
 catkin_make
 ```
 
-Follow the [README](https://github.com/ucsdwcsng/wiros_csi_node/blob/main/README.md) in the [CSI Node](https://github.com/ucsdwcsng/wiros_csi_node) to configure your hardware.
+Follow the [README](https://github.com/ucsdwcsng/wiros_csi/blob/main/README.md) in the [CSI Node](https://github.com/ucsdwcsng/wiros_csi) to configure your hardware.
 
 Once configured, running the `csi_node` from **wiros_csi** will publish raw CSI data to `/csi_raw`. We recommend passing the raw data through `correction_node.py` from **wiros_processing** before extracting AoA information with `aoa_node.py`.
 

@@ -3,7 +3,7 @@
 	url = https://github.com/Jklein64/rf_msgs.git
 [submodule "wiros_csi"]
 	path = wiros_csi
-	url = https://github.com/ucsdwcsng/wiros_csi_node.git
+	url = https://github.com/Jklein64/wiros_csi.git
 [submodule "wiros_processing"]
 	path = wiros_processing
 	url = https://github.com/Jklein64/wiros_processing.git
