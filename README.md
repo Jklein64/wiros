@@ -8,15 +8,14 @@ WiROS is a plug-and-play WiFi sensing toolbox allowing researchers to access coa
 This repository consists of several ROS packages:
 
 1. [**wiros_csi**](wiros_csi/) - ROS wrapper for the Nexmon CSI toolkit[1]
-2. [**wiros_processing**](wiros_processing/) - calibration and direction-finding algorithms
-3. [**rf_msgs**](rf_msgs/) - ROS messages for to structure WiFi measurement information.
+2. [**wiros_processing**](https://github.com/Jklein64/wiros_processing/) - calibration and direction-finding algorithms
+3. [**rf_msgs**](https://github.com/Jklein64/rf_msgs/) - ROS messages to structure WiFi measurement information
 
 ## Overview of Features
 
 1. Easily integrate WiFi CSI, RSSI, and other WiFi MAC-layer information into your robot sensor stack.
-2. Exposes all relevant measurements as accessible ROS topics. See [**rf_msgs**](rf_msgs/) for more details.
-3. Provides visualizations for WiFi signals which are helpful for algorithm paramter tuning and debugging
-4. Open-sources implementation of various state-of-art WiFi processing algorithms[2, 3, 4].
+2. Exposes all relevant measurements as accessible ROS topics. See **rf_msgs** for more details.
+3. Open-sources implementation of various state-of-art WiFi processing algorithms[2, 3, 4].
 
 ## Getting Started
 
@@ -26,7 +25,15 @@ To get started with WiROS, recursively clone this repo into your catkin workspac
 git clone --recursive https://github.com/Jklein64/wiros.git
 ```
 
+Then `cd` to the workspace root and build with
+
+```bash
+catkin_make
+```
+
 Follow the [README](https://github.com/ucsdwcsng/wiros_csi_node/blob/main/README.md) in the [CSI Node](https://github.com/ucsdwcsng/wiros_csi_node) to configure your hardware.
+
+Once configured, running the `csi_node` from **wiros_csi** will publish raw CSI data to `/csi_raw`. We recommend passing the raw data through `correction_node.py` from **wiros_processing** before extracting AoA information with `aoa_node.py`.
 
 ## Example usage of WiROS
 
@@ -36,7 +43,7 @@ WiROS can be easily leveraged to incorporate WiFi sensors to solve many applicab
 2. **Correct for Robot Location Drift**: WiFi measurements can be additionally fused with Camera and odometry measurements to more accurately correct for sensor drifts and resolve ambiguities arising from perceptual aliasing in indoor environment[3].
 3. **IoT device localiztion**: Often IoT devices are hard to localize visually. However, we can leverage WiFi-based bearing measurements to trinagulate their position in the envrionment. This can be useful for both IoT device management or to ensure security/privacy of users in a space.
 
-### Citations
+## Citations
 
 1. Blanco, Alejandro, et al. "Accurate ubiquitous localization with off-the-shelf ieee 802.11 ac devices." The 19th Annual International Conference on Mobile Systems, Applications, and Services (MobiSys 2021). 2021.
 2. Kotaru, Manikanta, et al. "Spotfi: Decimeter level localization using wifi." Proceedings of the 2015 ACM Conference on Special Interest Group on Data Communication. 2015.
