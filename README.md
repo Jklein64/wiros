@@ -1,5 +1,5 @@
 > [!WARNING]
-> This fork of [WiROS](https://github.com/ucsdwcsng/WiROS) is a complete rewrite done to expose certain information necessary for research not exposed in a useful way by the original library. As such, it makes many breaking API changes. This is not a drag-and-drop replacement for the original WiROS. This repository also implements only the WiROS capabilities we need, and _there are no guarantees that every WiROS feature is implemented here!_
+> This fork of [WiROS](https://github.com/ucsdwcsng/WiROS) is a complete rewrite done to expose certain information necessary for research that wasn't exposed in a useful way by the original library. As such, it makes many breaking API changes. This is not a drag-and-drop replacement for the original WiROS. This repository also implements only the WiROS capabilities we need, and _there are no guarantees that every WiROS feature is implemented here!_
 
 # WiROS: WiFi sensing toolbox for robotics
 
@@ -7,7 +7,7 @@ WiROS is a plug-and-play WiFi sensing toolbox allowing researchers to access coa
 
 This repository consists of several ROS packages:
 
-1. [**wiros_csi**](wiros_csi/) - ROS wrapper for the Nexmon CSI toolkit[1]
+1. [**wiros_csi**](https://github.com/Jklein64/wiros_csi/) - ROS wrapper for the Nexmon CSI toolkit[1]
 2. [**wiros_processing**](https://github.com/Jklein64/wiros_processing/) - calibration and direction-finding algorithms
 3. [**rf_msgs**](https://github.com/Jklein64/rf_msgs/) - ROS messages to structure WiFi measurement information
 
@@ -31,9 +31,9 @@ Then `cd` to the workspace root and build with
 catkin_make
 ```
 
-Follow the [README](https://github.com/ucsdwcsng/wiros_csi/blob/main/README.md) in the [CSI Node](https://github.com/ucsdwcsng/wiros_csi) to configure your hardware.
+Follow the [CSI Node README](https://github.com/Jklein64/wiros_csi/) to configure your hardware.
 
-Once configured, running the `csi_node` from **wiros_csi** will publish raw CSI data to `/csi_raw`. We recommend passing the raw data through `correction_node.py` from **wiros_processing** before extracting AoA information with `aoa_node.py`.
+Once configured, running the `csi_node` from **wiros_csi** will publish raw CSI data to `/csi_raw`. We recommend passing the raw data through `correction_node` from **wiros_processing** before extracting AoA information with `aoa_node`. The **wiros_processing** package has an [example launchfile](https://github.com/Jklein64/wiros_processing/blob/main/launch/example.launch) showing how to do this.
 
 ## Example usage of WiROS
 
